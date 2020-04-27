@@ -22,3 +22,9 @@ steps:
       # Write your PowerShell commands here.
       
       Write-Host "Hello World"
+      
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
